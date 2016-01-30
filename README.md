@@ -26,7 +26,7 @@ class User
   include Opened::Partnerapi
 
   def self.get_signed_cert
-    hsh = {username:'lucas',client_id:ENV['CLIENT_ID'], app_secret:ENV['CLIENT_SECRET'] }
+    hsh = {username:'my_username',client_id:ENV['CLIENT_ID'], app_secret:ENV['CLIENT_SECRET'] }
     return signed_request(hsh)
   end
 end
