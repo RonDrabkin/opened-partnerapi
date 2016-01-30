@@ -21,8 +21,15 @@ Or install it yourself as:
     $ gem install opened-partnerapi
 
 ## Usage
+ 
+class User
+  include Opened::Partnerapi
 
-TODO: Write usage instructions here
+  def self.get_signed_cert
+    hsh = {username:'lucas',client_id:ENV['CLIENT_ID'], app_secret:ENV['CLIENT_SECRET'] }
+    return signed_request(hsh)
+  end
+end
 
 ## Development
 
