@@ -25,13 +25,10 @@ Or install it yourself as:
 class User
   include Opened::Partnerapi
 
-  def self.get_signed_cert
-    hsh = {username:'my_username',client_id:ENV['CLIENT_ID'], app_secret:ENV['CLIENT_SECRET'] }
-    signed_request(hsh)
-  end
-
-  def get_token (signed_certificate)
-    get_access_token (signed_certificate)
+  def self.get_token (username)
+    hsh = {username:username,client_id:ENV['CLIENT_ID'], app_secret:ENV['CLIENT_SECRET'] }
+    sr  =  signed_request(hsh)
+    return get_access_token(sr, ENV['PARTNER_BASE_URI'])
   end
 end
 ```
