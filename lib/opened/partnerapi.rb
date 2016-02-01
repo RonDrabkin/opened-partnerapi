@@ -26,8 +26,9 @@ module Opened
         return "#{encoded_signature}.#{encoded_envelope}"
       end
 
-      def get_access_token (signed_certificate)
-        url = "#{PARTNERAPI_URL}/oauth/silent_login"
+      def get_access_token (signed_certificate, url=nil)
+        base_url = url || PARTNERAPI_URL
+        url = "#{base_url}/oauth/silent_login"
         header = {content_type: 'application/text'}
         RestClient.post url, signed_certificate, header
       end
