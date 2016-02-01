@@ -8,6 +8,7 @@ module Opened
     end
 
     module ClassMethods
+      PARTNERAPI_URL = 'https://partner.opened.com'
 
       def signed_request (params)
         check_for_errors(params)
@@ -23,6 +24,12 @@ module Opened
         encoded_signature = base64_url_encode(signature)
 
         return "#{encoded_signature}.#{encoded_envelope}"
+      end
+
+      def get_access_token (signed_certificate)
+        url = "#{PARTNERAPI_URL}/oauth/silent_login"
+        header = {content_type: 'application/text'}
+        RestClient.post url, signed_certificate, header
       end
 
       private
