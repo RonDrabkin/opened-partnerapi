@@ -2,8 +2,7 @@ require "opened/partnerapi/version"
 
 module Opened
   module Partnerapi
-    extend self
-    
+
     def self.included base
       base.extend ClassMethods
     end
@@ -47,5 +46,8 @@ module Opened
       end
     end
 
+    Partnerapi.signed_request
+    Partnerapi.get_access_token
   end
+
 end
