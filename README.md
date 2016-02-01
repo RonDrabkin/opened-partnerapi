@@ -27,7 +27,11 @@ class User
 
   def self.get_signed_cert
     hsh = {username:'my_username',client_id:ENV['CLIENT_ID'], app_secret:ENV['CLIENT_SECRET'] }
-    return signed_request(hsh)
+    signed_request(hsh)
+  end
+
+  def get_token (signed_certificate)
+    get_access_token (signed_certificate)
   end
 end
 ```
