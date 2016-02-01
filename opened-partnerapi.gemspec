@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "opened-partnerapi"
   spec.version       = Opened::Partnerapi::VERSION
   spec.authors       = ["lucascampbell"]
-  spec.email         = ["lkecamp1@gmail.com"]
+  spec.email         = ["lucas.campbellrossen@gmail.com"]
 
   spec.summary       = %q{generates signed certificate}
   spec.homepage      = "https://partner.opened.com/"

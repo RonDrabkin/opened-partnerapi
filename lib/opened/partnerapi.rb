@@ -2,6 +2,7 @@ require "opened/partnerapi/version"
 
 module Opened
   module Partnerapi
+    extend self
     
     def self.included base
       base.extend ClassMethods
