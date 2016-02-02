@@ -45,9 +45,5 @@ module Opened
         raise Exception.new "You must pass a username" unless params[:username]
       end
     end
-
-    Partnerapi.signed_request
-    Partnerapi.get_access_token
   end
-
 end
