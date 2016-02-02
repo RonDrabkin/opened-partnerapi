@@ -1,4 +1,8 @@
 require "opened/partnerapi/version"
+require 'json'
+require "base64"
+require 'opened-partnerapi'
+require 'rest-client'
 
 module Opened
   module Partnerapi
